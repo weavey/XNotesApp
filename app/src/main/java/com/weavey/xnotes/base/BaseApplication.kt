@@ -1,16 +1,50 @@
 package com.weavey.xnotes.base
 
 import android.app.Application
+import com.weavey.xnotes.bean_json.NotesType
+import com.weavey.xnotes.utils.SPUtils
+import org.litepal.LitePalApplication
 
 /**
- * Created by BINGLI-021 on 2017-05-10.
+ * Created by Weavey on 2017-05-10.
  */
 
 class BaseApplication : Application() {
 
-    private var mApplication : BaseApplication? =null
-
     override fun onCreate() {
         super.onCreate()
+        mApplication = this
+
+
+    }
+
+    fun initConfig(){
+
+        LitePalApplication.initialize(mApplication)
+
+    }
+
+    fun initDB(){
+
+        if (SPUtils.get(BaseTag.DB_CREATE,false)==null)let {
+
+            SPUtils.commit(BaseTag.DB_CREATE,true)
+
+            var type1: NotesType = NotesType(0,"默认",1)
+            var type2: NotesType = NotesType(1,"工作",1)
+            var type3: NotesType = NotesType(2,"生活",1)
+
+            type1.save()
+            type2.save()
+            type3.save()
+        }
+
+    }
+
+    companion object{
+
+        var mApplication: BaseApplication? = null
+            private set
+
     }
 }
