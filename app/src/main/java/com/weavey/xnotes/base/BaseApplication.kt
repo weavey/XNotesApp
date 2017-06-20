@@ -8,9 +8,23 @@ import android.app.Application
 
 class BaseApplication : Application() {
 
-    private var mApplication : BaseApplication? =null
-
     override fun onCreate() {
         super.onCreate()
+
+        initConfig()
     }
+
+    private fun initConfig() {
+
+
+    }
+
+
+    companion object {
+
+        var mBaseApplication: BaseApplication? = null
+            private set
+
+    }
+
 }
