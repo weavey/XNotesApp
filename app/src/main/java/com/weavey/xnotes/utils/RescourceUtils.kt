@@ -13,23 +13,23 @@ object RescourceUtils {
 
     fun getDrawable(@DrawableRes id: Int): Drawable {
 
-        return ContextCompat.getDrawable(BaseApplication.mBaseApplication,id);
+        return ContextCompat.getDrawable(BaseApplication.mApplication,id);
     }
 
     fun getColor(@ColorRes id:Int):Int{
 
 
-        return ContextCompat.getColor(BaseApplication.mBaseApplication,id);
+        return ContextCompat.getColor(BaseApplication.mApplication,id);
     }
 
     fun getString(@StringRes id:Int):String{
 
-        return BaseApplication.mBaseApplication!!.resources.getString(id);
+        return BaseApplication.mApplication!!.resources.getString(id);
     }
 
     fun getDimens(@DimenRes id : Int):Float{
 
-        return BaseApplication.mBaseApplication!!.resources.getDimension(id);
+        return BaseApplication.mApplication!!.resources.getDimension(id);
     }
 
 }
