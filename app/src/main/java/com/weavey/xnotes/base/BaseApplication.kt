@@ -1,7 +1,7 @@
 package com.weavey.xnotes.base
 
 import android.app.Application
-import com.weavey.xnotes.bean_json.NotesType
+import com.weavey.xnotes.bean_litepal.NotesType
 import com.weavey.xnotes.utils.SPUtils
 import org.litepal.LitePalApplication
 
@@ -26,9 +26,9 @@ class BaseApplication : Application() {
 
     fun initDB(){
 
-        if (SPUtils.get(BaseTag.DB_CREATE,false)==null)let {
+        if (SPUtils.get(BaseConstant.DB_CREATE,false)==null)let {
 
-            SPUtils.commit(BaseTag.DB_CREATE,true)
+            SPUtils.commit(BaseConstant.DB_CREATE,true)
 
             var type1: NotesType = NotesType(0,"默认",1)
             var type2: NotesType = NotesType(1,"工作",1)

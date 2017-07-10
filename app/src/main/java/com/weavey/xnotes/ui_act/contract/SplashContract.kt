@@ -1,5 +1,7 @@
 package com.weavey.xnotes.ui_act.contract
 
+import com.weavey.xnotes.base.BaseModel
+import com.weavey.xnotes.base.BasePresenter
 import com.weavey.xnotes.base.BaseView
 
 /**
@@ -8,9 +10,20 @@ import com.weavey.xnotes.base.BaseView
 
 interface SplashContract {
 
-    interface SplashView : BaseView {
+    interface View : BaseView {
 
+        fun baeView()
     }
 
+    interface Model : BaseModel{
+
+        fun baseModel()
+    }
+
+    abstract class Presenter(baseView: View, baseModel: Model) : BasePresenter<View, Model>(baseView, baseModel) {
+
+        abstract fun basePresenter()
+
+    }
 
 }

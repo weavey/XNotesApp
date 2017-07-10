@@ -4,7 +4,7 @@ package com.weavey.xnotes.base
  * create by Weavey
  * on date 2016-03-21
  */
-object BaseTag {
+object BaseConstant {
 
     var DB_CREATE = "db_create" //创建数据库的key
 

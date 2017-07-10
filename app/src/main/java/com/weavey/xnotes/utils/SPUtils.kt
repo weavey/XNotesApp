@@ -3,7 +3,7 @@ package com.weavey.xnotes.utils
 import android.app.Activity
 import android.content.SharedPreferences
 import com.weavey.xnotes.base.BaseApplication
-import com.weavey.xnotes.base.BaseTag
+import com.weavey.xnotes.base.BaseConstant
 
 /**
  * Created by Weavey on 2017-06-19.
@@ -14,7 +14,7 @@ object SPUtils{
     var sp: SharedPreferences? = null
 
     init {
-        sp = BaseApplication.mApplication?.getSharedPreferences(BaseTag.SP_DATA,Activity.MODE_PRIVATE)
+        sp = BaseApplication.mApplication?.getSharedPreferences(BaseConstant.SP_DATA,Activity.MODE_PRIVATE)
     }
 
     fun commit(key: String,value: String){
@@ -47,7 +47,7 @@ object SPUtils{
         return getSP()?.getInt(key,def)
     }
 
-    private fun getSP() = sp ?: BaseApplication.mApplication?.getSharedPreferences(BaseTag.SP_DATA,Activity.MODE_PRIVATE)
+    private fun getSP() = sp ?: BaseApplication.mApplication?.getSharedPreferences(BaseConstant.SP_DATA,Activity.MODE_PRIVATE)
 
 
 }
